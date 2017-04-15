@@ -1,0 +1,55 @@
+Last login: Wed Apr 12 22:16:21 on ttys002
+Raeenas-MacBook-Air:bioc3301_data raeenahirve$ source activate qiime1
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ cd
+(qiime1) Raeenas-MacBook-Air:~ raeenahirve$ cd bioc3301_data
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ ls
+2016					corediversityresults
+2016_cr_join_no_golay.sh		coreotus
+2016_stdout				jack
+2017					merge_otu_tables.sh
+2017_cr_nojoin_no_golay.sh		merged_otu_table.biom
+2017_stdout				merged_otu_table_qual_summary.txt
+Acido					merged_otu_table_summary.txt
+Filtered OTU				procrustes_results
+README.md				rich_sparse_otu_table_summary.txt
+comparealphadiversity			taxa_summary
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ ilter_taxa_from_otu_table.py -i merged_otu_table.biom -o otu_table_acido.biom -p p__Acidobacteria
+-bash: ilter_taxa_from_otu_table.py: command not found
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ filter_taxa_from_otu_table.py -i merged_otu_table.biom -o Proteo/otu_table_proteo.biom -p p__Proteobacteria
+Traceback (most recent call last):
+  File "/Users/raeenahirve/miniconda2/envs/qiime1/bin/filter_taxa_from_otu_table.py", line 4, in <module>
+    __import__('pkg_resources').run_script('qiime==1.9.1', 'filter_taxa_from_otu_table.py')
+  File "/Users/raeenahirve/miniconda2/envs/qiime1/lib/python2.7/site-packages/setuptools-27.2.0-py2.7.egg/pkg_resources/__init__.py", line 744, in run_script
+    
+  File "/Users/raeenahirve/miniconda2/envs/qiime1/lib/python2.7/site-packages/setuptools-27.2.0-py2.7.egg/pkg_resources/__init__.py", line 1499, in run_script
+    
+  File "/Users/raeenahirve/miniconda2/envs/qiime1/lib/python2.7/site-packages/qiime-1.9.1-py2.7.egg-info/scripts/filter_taxa_from_otu_table.py", line 90, in <module>
+    main()
+  File "/Users/raeenahirve/miniconda2/envs/qiime1/lib/python2.7/site-packages/qiime-1.9.1-py2.7.egg-info/scripts/filter_taxa_from_otu_table.py", line 82, in main
+    write_biom_table(input_table, output_table_fp)
+  File "/Users/raeenahirve/miniconda2/envs/qiime1/lib/python2.7/site-packages/qiime/util.py", line 576, in write_biom_table
+    with biom_open(biom_table_fp, 'w') as biom_file:
+  File "/Users/raeenahirve/miniconda2/envs/qiime1/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/Users/raeenahirve/miniconda2/envs/qiime1/lib/python2.7/site-packages/biom_format-2.1.5-py2.7-macosx-10.5-x86_64.egg/biom/util.py", line 460, in biom_open
+    f = opener(fp, mode)
+  File "/Users/raeenahirve/miniconda2/envs/qiime1/lib/python2.7/site-packages/h5py/_hl/files.py", line 272, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, swmr=swmr)
+  File "/Users/raeenahirve/miniconda2/envs/qiime1/lib/python2.7/site-packages/h5py/_hl/files.py", line 98, in make_fid
+    fid = h5f.create(name, h5f.ACC_TRUNC, fapl=fapl, fcpl=fcpl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper (-------src-dir--------/h5py/_objects.c:2582)
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper (-------src-dir--------/h5py/_objects.c:2541)
+  File "h5py/h5f.pyx", line 96, in h5py.h5f.create (-------src-dir--------/h5py/h5f.c:1989)
+IOError: Unable to create file (Unable to open file: name = 'proteo/otu_table_proteo.biom', errno = 2, error message = 'no such file or directory', flags = 13, o_flags = 602)
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ filter_taxa_from_otu_table.py -i merged_otu_table.biom -o otu_table_proteo.biom -p p__Proteobacteria
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ iom summarize-table -i otu_table_acido.biom -o acidosummarize_otu_table_summary.txt
+-bash: iom: command not found
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ biom summarize-table -i otu_table_proteo.biom -o proteosummarize_otu_table_summary.txt
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ lpha_rarefaction.py -i Acido/otu_table_acido.biom -o Acido/arare_max20000/ -t 2016/otus/97_otus.tree -m 2016/map/map.tsv_corrected.txt -e 20000
+-bash: lpha_rarefaction.py: command not found
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ lpha_rarefaction.py -i Proteo/otu_table_proteo.biom -o Proteo/arare_max80000/ -t 2016/otus/97_otus.tree -m 2016/map/map.tsv_corrected.txt -e 80000
+-bash: lpha_rarefaction.py: command not found
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ alpha_rarefaction.py -i Proteo/otu_table_proteo.biom -o Proteo/arare_max80000/ -t 2016/otus/97_otus.tree -m 2016/map/map.tsv_corrected.txt -e 80000
+/Users/raeenahirve/miniconda2/envs/qiime1/lib/python2.7/site-packages/matplotlib/collections.py:590: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == str('face'):
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ 
