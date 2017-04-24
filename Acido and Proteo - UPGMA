@@ -1,0 +1,4 @@
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ jackknifed_beta_diversity.py -i Acido/otu_table_acido.biom -o Acido/bdiv_jk20000 -e 20000 -m 2016/map/map.tsv_corrected.txt -t 2016/otus/97_otus.tree 
+/Users/raeenahirve/miniconda2/envs/qiime1/lib/python2.7/site-packages/skbio/stats/ordination/_principal_coordinate_analysis.py:107: RuntimeWarning: The result contains negative eigenvalues. Please compare their magnitude with the magnitude of some of the largest positive eigenvalues. If the negative ones are smaller, it's probably safe to ignore them, but if they are large in magnitude, the results won't be useful. See the Notes section for more details. The smallest eigenvalue is -1.01435280803e-06 and the largest is 0.0704588610903.
+  RuntimeWarning
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ jackknifed_beta_diversity.py -i Proteo/otu_table_proteo.biom -o Proeto/bdiv_jk80000 -e 80000 -m 2016/map/map.tsv_corrected.txt -t 2016/otus/97_otus.tree 
