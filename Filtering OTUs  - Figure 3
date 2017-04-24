@@ -1,0 +1,5 @@
+Raeenas-MacBook-Air:bioc3301_data raeenahirve$ source activate qiime1
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ cd
+(qiime1) Raeenas-MacBook-Air:~ raeenahirve$ cd bioc3301_data
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ filter_taxa_from_otu_table.py -i merged_otu_table.biom -o otu_table_proacido.biom -p p__Acidobacteria, p__Proteobacteia
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ summarize_taxa.py -i otu_table_proacido.biom -o .proacidotaxasummary./tax
