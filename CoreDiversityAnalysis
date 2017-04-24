@@ -1,0 +1,5 @@
+pc-141-166:~ raeenahirve$ source activate qiime1
+(qiime1) pc-141-166:~ raeenahirve$ cd 
+(qiime1) pc-141-166:~ raeenahirve$ cd bioc3301_data
+(qiime1) pc-141-166:bioc3301_data raeenahirve$ 
+(qiime1) pc-141-166:~ raeenahirve$ core_diversity_analyses.py -i merged_otu_table.biom -o $corediversityanalysis -m $2016/map/map.tsv_corrected.txt -t $2016/otus/97_otus.tree -e 3700000 --recover_from_failure
