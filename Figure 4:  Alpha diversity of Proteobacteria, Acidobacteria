@@ -1,12 +1,6 @@
-Last login: Sat Apr  8 17:14:27 on ttys000
+
 Raeenas-MacBook-Air:bioc3301_data raeenahirve$ source activate qiime1
 (qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ cd
-(qiime1) Raeenas-MacBook-Air:~ raeenahirve$ ls 
-AnacondaProjects	Downloads		Public			raeena
-Applications		Library			Trovi			workshop
-CytoscapeConfiguration	Movies			bioc3301_data
-Desktop			Music			gittest
-Documents		Pictures		miniconda2
 (qiime1) Raeenas-MacBook-Air:~ raeenahirve$ cd bioc3301_data
 
 (qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ filter_taxa_from_otu_table.py -i merged_otu_table.biom -o otu_table_acido.biom -p p__Acidobacteria
