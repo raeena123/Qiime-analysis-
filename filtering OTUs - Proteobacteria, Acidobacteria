@@ -1,0 +1,29 @@
+Last login: Sat Apr  8 17:14:27 on ttys000
+Raeenas-MacBook-Air:bioc3301_data raeenahirve$ source activate qiime1
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ cd
+(qiime1) Raeenas-MacBook-Air:~ raeenahirve$ ls 
+AnacondaProjects	Downloads		Public			raeena
+Applications		Library			Trovi			workshop
+CytoscapeConfiguration	Movies			bioc3301_data
+Desktop			Music			gittest
+Documents		Pictures		miniconda2
+(qiime1) Raeenas-MacBook-Air:~ raeenahirve$ cd bioc3301_data
+
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ filter_taxa_from_otu_table.py -i merged_otu_table.biom -o otu_table_acido.biom -p p__Acidobacteria
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ biom summarize-table -i otu_table_acido.biom -o acidosummarize_otu_table_summary.txt
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ alpha_rarefaction.py -i Acido/otu_table_acido.biom -o Acido/arare_max20000/ -t 2016/otus/97_otus.tree -m 2016/map/map.tsv_corrected.txt -e 20000 
+/Users/raeenahirve/miniconda2/envs/qiime1/lib/python2.7/site-packages/matplotlib/collections.py:590: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == str('face'):
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ compare_alpha_diversity.py -i Acido/arare_max20000/alpha_div_collated/PD_whole_tree.txt -m 2016/map/map.tsv_corrected.txt -c Year -o Acido/compareAlphadiv
+/Users/raeenahirve/miniconda2/envs/qiime1/lib/python2.7/site-packages/matplotlib/tight_layout.py:225: UserWarning: tight_layout : falling back to Agg renderer
+  warnings.warn("tight_layout : falling back to Agg renderer")
+  
+  
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ filter_taxa_from_otu_table.py -i merged_otu_table.biom -o otu_table_proteo.biom -p p__Proteobacteria
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ biom summarize-table -i otu_table_poteo.biom -o proteosummarize_otu_table_summary.txt
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ alpha_rarefaction.py -i Proteo/otu_table_proteo.biom -o Proteo/arare_max80000/ -t 2016/otus/97_otus.tree -m 2016/map/map.tsv_corrected.txt -e 80000 
+/Users/raeenahirve/miniconda2/envs/qiime1/lib/python2.7/site-packages/matplotlib/collections.py:590: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  if self._edgecolors == str('face'):  
+(qiime1) Raeenas-MacBook-Air:bioc3301_data raeenahirve$ compare_alpha_diversity.py -i Proteo/arare_max80000/alpha_div_collated/PD_whole_tree.txt -m 2016/map/map.tsv_corrected.txt -c Year -o Proteo/compareAlphadiv
+/Users/raeenahirve/miniconda2/envs/qiime1/lib/python2.7/site-packages/matplotlib/tight_layout.py:225: UserWarning: tight_layout : falling back to Agg renderer
+  warnings.warn("tight_layout : falling back to Agg renderer")
